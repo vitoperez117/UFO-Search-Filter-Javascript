@@ -6,26 +6,30 @@ filterButton.on("click", function () {
 
     d3.event.preventDefault();
 
-    var dateInput = d3.select("#datetime");
+    var dateInputValue = d3.select("#datetime").property("value");
+    var filteredByDate = ufoRecords.filter(entry  => entry.datetime === dateInputValue);
 
-    var inputValue = dateInput.property("value");
+    // var cityInputValue = d3.select("#city").property("value");
+    // var filteredByCity =filteredByDate.filter(entry => entry.city === cityInputValue);
 
-    var filteredData = ufoRecords.filter(entry  => entry.datetime === inputValue);
+    // var stateInputValue = d3.select("#state").property("value");
+    // var filteredByState = filteredByCity.filter(entry => entry.state === stateInputValue);
 
-    console.log(filteredData);
+    // var countryInputValue = d3.select("#country").property("value");
+    // var filteredByCountry = filteredByCity.filter(entry => entry.country === countryInputValue);
+
+    // var ufoShapeInputValue = d3.select("#ufo-shape").property("value");
+    // var filteredData = filteredByDate.filter(entryShape => entryShape.ufoShapeInputValue);
 
     var tbody = d3.select("tbody")
 
     tbody.html("");
     
-    filteredData.forEach((filteredData) => {
+    filteredByDate.forEach((filteredByDate) => {
         var row = tbody.append("tr")
-        Object.entries(filteredData).forEach (function([key,value]) {
+        Object.entries(filteredByDate).forEach (function([key,value]) {
             var cell = row.append("td");
             cell.text(value);
             })
-    console.log(filteredData.map(x => x.shape));
     })
-
-
 });
