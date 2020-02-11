@@ -1,4 +1,4 @@
-# UFO-search-filter-javascript
+# UFO-Search-Filter-Javascript
 
 ## Table of Contents
 
