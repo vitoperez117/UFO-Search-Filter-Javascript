@@ -1,4 +1,4 @@
-# javascript-challenge
+# UFO-search-filter-javascript
 
 ## Table of Contents
 
